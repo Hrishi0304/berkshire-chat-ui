@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkshire Hathaway Intelligence — AI Terminal</title>
+    <meta name="description" content="Decentralized intelligence terminal querying decades of Warren Buffett's shareholder letters. Powered by Mastra and Neon PgVector.">
+    <!-- Google Fonts: Outfit & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Premium Ambient Background Gradients -->
+    <div class="glow-bg bg-emerald"></div>
+    <div class="glow-bg bg-gold"></div>
+
+    <div class="container">
+        <!-- Frosted Glass Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-chart-line-up logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">BERKSHIRE</span>
+                    <span class="sub-brand">INTELLIGENCE</span>
+                </div>
+            </div>
+            <div class="status-badge" id="api-status">
+                <span class="status-dot"></span>
+                <span class="status-text">BHI Node Active</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <section class="hero-section" id="hero">
+                <div class="badge">RAG AI Agent V1.0</div>
+                <h1>Unlock 48 Years of <br><span class="gradient-text">Warren Buffett's Wisdom</span></h1>
+                <p class="subtitle">Query a highly optimized PgVector index covering every Berkshire Hathaway shareholder letter from 1977 to 2024. Get instant, semantic answers powered by Mastra and Groq.</p>
+                
+                <!-- Quick Prompts Cards -->
+                <div class="suggestions-grid">
+                    <div class="suggestion-card" onclick="selectPrompt(this)">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>The Economic Moat</h3>
+                        <p>"What makes a great economic moat according to Buffett?"</p>
+                    </div>
+                    <div class="suggestion-card" onclick="selectPrompt(this)">
+                        <div class="card-icon"><i class="fa-solid fa-coins"></i></div>
+                        <h3>Gold & Bitcoin</h3>
+                        <p>"Why does Warren Buffett dislike investing in gold and bitcoin?"</p>
+                    </div>
+                    <div class="suggestion-card" onclick="selectPrompt(this)">
+                        <div class="card-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                        <h3>Circle of Competence</h3>
+                        <p>"How does he define the circle of competence for investors?"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat & Response Area -->
+            <section class="chat-section">
+                <!-- Chat Window Container -->
+                <div class="chat-container hidden" id="chat-container">
+                    <div class="chat-scroll" id="chat-scroll">
+                        <!-- Message Bubbles will render here -->
+                    </div>
+                </div>
+
+                <!-- Input Console -->
+                <div class="input-container">
+                    <form id="chat-form" class="input-form">
+                        <input 
+                            type="text" 
+                            id="user-input" 
+                            placeholder="Ask BHI Node about investments, moat, or letters..." 
+                            required
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <span class="btn-text">Query BHI</span>
+                            <i class="fa-solid fa-paper-plane send-icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Premium Footer -->
+        <footer class="app-footer">
+            <div class="footer-meta">
+                <span>Database: <strong class="db-glow">Neon PgVector (384 Dims)</strong></span>
+                <span class="divider">•</span>
+                <span>Agent Pipeline: <strong>Mastra RAG</strong></span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
